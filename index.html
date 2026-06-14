@@ -1,0 +1,703 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Zaanstraat 314 · Tareas</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="header-inner">
+      <p class="address-eyebrow">Zaanstraat 314 · Amsterdam</p>
+      <h1 class="site-title">Nuestra lista<br/><em>de tareas</em></h1>
+      <p class="header-subtitle" data-i18n="subtitle">Todo lo que hay que hacer antes, durante y después de la entrega.</p>
+
+      <!-- CONTROLS -->
+      <div class="controls">
+        <div class="lang-switcher">
+          <button class="lang-btn active" data-lang="es">ES</button>
+          <button class="lang-btn" data-lang="it">IT</button>
+          <button class="lang-btn" data-lang="en">EN</button>
+        </div>
+        <div class="legend">
+          <span class="badge badge-belen">🧞‍♀️ Belén</span>
+          <span class="badge badge-filippo">🧞 Filippo</span>
+          <span class="badge badge-together">✦ Juntos</span>
+        </div>
+      </div>
+
+      <!-- PROGRESS GLOBAL -->
+      <div class="progress-global">
+        <div class="progress-label">
+          <span data-i18n="progress">Progreso general</span>
+          <span class="progress-pct" id="globalPct">0%</span>
+        </div>
+        <div class="progress-bar-track">
+          <div class="progress-bar-fill" id="globalBar"></div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="main-content">
+
+    <!-- SECTION 1 -->
+    <section class="task-section" data-section="papeles">
+      <div class="section-header" onclick="toggleSection('papeles')">
+        <div class="section-meta">
+          <span class="section-num">01</span>
+          <div>
+            <h2 class="section-title" data-i18n="s1title">Papeles, contrato y notario</h2>
+            <p class="section-desc" data-i18n="s1desc">Contrato, cláusulas, notario, VvE y documentos legales.</p>
+          </div>
+        </div>
+        <div class="section-right">
+          <div class="mini-progress">
+            <div class="mini-bar-fill" id="bar-papeles"></div>
+          </div>
+          <span class="mini-pct" id="pct-papeles">0%</span>
+          <span class="chevron" id="chev-papeles">↓</span>
+        </div>
+      </div>
+      <div class="task-list" id="list-papeles">
+
+        <div class="subsection-label" data-i18n="s1sub1">Contrato de compra</div>
+
+        <div class="task-item" data-owner="together">
+          <label class="task-label">
+            <input type="checkbox" class="task-check" data-section="papeles" />
+            <span class="task-text" data-i18n="t_revisar_contrato">Revisar la versión final del contrato / koopovereenkomst.</span>
+          </label>
+          <span class="owner-badge" title="Juntos">✦</span>
+        </div>
+
+        <div class="task-item" data-owner="together">
+          <label class="task-label">
+            <input type="checkbox" class="task-check" data-section="papeles" />
+            <span class="task-text" data-i18n="t_confirmar_fecha">Confirmar que la fecha estimada de entrega sea alrededor del 15 de agosto de 2026.</span>
+          </label>
+          <span class="owner-badge" title="Juntos">✦</span>
+        </div>
+
+        <div class="task-item" data-owner="together">
+          <label class="task-label">
+            <input type="checkbox" class="task-check" data-section="papeles" />
+            <span class="task-text" data-i18n="t_financing_condition">Revisar que la financing condition refleje la financiación real: ~€630.000 + bouwdepot €30.000.</span>
+          </label>
+          <span class="owner-badge" title="Juntos">✦</span>
+        </div>
+
+        <div class="task-item" data-owner="belen">
+          <label class="task-label">
+            <input type="checkbox" class="task-check" data-section="papeles" />
+            <span class="task-text" data-i18n="t_clausulas">Revisar cláusulas clave: non-self-occupancy, age clause, asbestos, foundation waiver, owner-occupancy, resale restriction, fire-rated ceiling, splitsingstekening.</span>
+          </label>
+          <span class="owner-badge" title="Belén">🧞‍♀️</span>
+        </div>
+
+        <div class="subsection-label" data-i18n="s1sub2">Notario</div>
+
+        <div class="task-item" data-owner="together">
+          <label class="task-label">
+            <input type="checkbox" class="task-check" data-section="papeles" />
+            <span class="task-text" data-i18n="t_source_funds">Completar source of funds form y PEP statement.</span>
+          </label>
+          <span class="owner-badge" title="Juntos">✦</span>
+        </div>
+
+        <div class="task-item" data-owner="belen">
+          <label class="task-label">
+            <input type="checkbox" class="task-check" data-section="papeles" />
+            <span class="task-text" data-i18n="t_embajador">Preguntar en privado al notario sobre el caso del tío embajador (WWFT/KYC).</span>
+          </label>
+          <span class="owner-badge" title="Belén">🧞‍♀️</span>
+        </div>
+
+        <div class="task-item" data-owner="together">
+          <label class="task-label">
+            <input type="checkbox" class="task-check" data-section="papeles" />
+            <span class="task-text" data-i18n="t_firma_notario">Confirmar documentos a firmar, monto a transferir y nota van afrekening antes de la transferencia.</span>
+          </label>
+          <span class="owner-badge" title="Juntos">✦</span>
+        </div>
+
+        <div class="task-item" data-owner="belen">
+          <label class="task-label">
+            <input type="checkbox" class="task-check" data-section="papeles" />
+            <span class="task-text" data-i18n="t_erfpacht">Confirmar erfpacht: canon prepaid hasta 31 dic 2059 y posibles costes por cambio de uso.</span>
+          </label>
+          <span class="owner-badge" title="Belén">🧞‍♀️</span>
+        </div>
+
+        <div class="subsection-label" data-i18n="s1sub3">VvE y documentos legales</div>
+
+        <div class="task-item" data-owner="belen">
+          <label class="task-label">
+            <input type="checkbox" class="task-check" data-section="papeles" />
+            <span class="task-text" data-i18n="t_vve_costes">Pedir confirmación escrita de VvE sobre costes del proyecto de sostenibilidad / verduurzaming, préstamo colectivo, derrama y cuota mensual.</span>
+          </label>
+          <span class="owner-badge" title="Belén">🧞‍♀️</span>
+        </div>
+
+        <div class="task-item" data-owner="belen">
+          <label class="task-label">
+            <input type="checkbox" class="task-check" data-section="papeles" />
+            <span class="task-text" data-i18n="t_vve_reserve">Pedir estado actualizado del reserve fund y confirmación del share del vendedor.</span>
+          </label>
+          <span class="owner-badge" title="Belén">🧞‍♀️</span>
+        </div>
+
+        <div class="task-item" data-owner="together">
+          <label class="task-label">
+            <input type="checkbox" class="task-check" data-section="papeles" />
+            <span class="task-text" data-i18n="t_vve_normas">Confirmar normas exactas de suelo acústico, permisos para obras, horarios, ruido y uso de escalera.</span>
+          </label>
+          <span class="owner-badge" title="Juntos">✦</span>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION 2 -->
+    <section class="task-section" data-section="financiero">
+      <div class="section-header" onclick="toggleSection('financiero')">
+        <div class="section-meta">
+          <span class="section-num">02</span>
+          <div>
+            <h2 class="section-title" data-i18n="s2title">Financiero, hipoteca y seguros</h2>
+            <p class="section-desc" data-i18n="s2desc">Hipoteca, taxatie, bank guarantee, seguro de vida y presupuesto total.</p>
+          </div>
+        </div>
+        <div class="section-right">
+          <div class="mini-progress">
+            <div class="mini-bar-fill" id="bar-financiero"></div>
+          </div>
+          <span class="mini-pct" id="pct-financiero">0%</span>
+          <span class="chevron" id="chev-financiero">↓</span>
+        </div>
+      </div>
+      <div class="task-list" id="list-financiero">
+
+        <div class="subsection-label" data-i18n="s2sub1">Hipoteca</div>
+
+        <div class="task-item" data-owner="together">
+          <label class="task-label">
+            <input type="checkbox" class="task-check" data-section="financiero" />
+            <span class="task-text" data-i18n="t_monto_hipoteca">Confirmar con Edwin monto objetivo: ~€630.000 + €30.000 bouwdepot y mejores condiciones bancarias.</span>
+          </label>
+          <span class="owner-badge" title="Juntos">✦</span>
+        </div>
+
+        <div class="task-item" data-owner="filippo">
+          <label class="task-label">
+            <input type="checkbox" class="task-check" data-section="financiero" />
+            <span class="task-text" data-i18n="t_simulaciones">Revisar simulaciones con y sin bouwdepot: tipo de interés, cuota mensual, duración fija.</span>
+          </label>
+          <span class="owner-badge" title="Filippo">🧞</span>
+        </div>
+
+        <div class="task-item" data-owner="filippo">
+          <label class="task-label">
+            <input type="checkbox" class="task-check" data-section="financiero" />
+            <span class="task-text" data-i18n="t_bouwdepot">Confirmar qué obras cubre el bouwdepot: suelo, cocina, electricidad, pladur acústico, baño, mejoras energéticas.</span>
+          </label>
+          <span class="owner-badge" title="Filippo">🧞</span>
+        </div>
+
+        <div class="subsection-label" data-i18n="s2sub2">Taxatie y bank guarantee</div>
+
+        <div class="task-item" data-owner="together">
+          <label class="task-label">
+            <input type="checkbox" class="task-check" data-section="financiero" />
+            <span class="task-text" data-i18n="t_taxatie">Confirmar que la taxatie considere valor post-reforma si hay bouwdepot. Preparar lista de obras justificadas.</span>
+          </label>
+          <span class="owner-badge" title="Juntos">✦</span>
+        </div>
+
+        <div class="task-item" data-owner="filippo">
+          <label class="task-label">
+            <input type="checkbox" class="task-check" data-section="financiero" />
+            <span class="task-text" data-i18n="t_bank_guarantee">Confirmar deadline, monto (10% del precio), coste y coordinación de la bank guarantee con notario.</span>
+          </label>
+          <span class="owner-badge" title="Filippo">🧞</span>
+        </div>
+
+        <div class="subsection-label" data-i18n="s2sub3">Seguro de vida</div>
+
+        <div class="task-item" data-owner="together">
+          <label class="task-label">
+            <input type="checkbox" class="task-check" data-section="financiero" />
+            <span class="task-text" data-i18n="t_seguro_vida">Revisar oferta TAF (€300k/€400k/€500k) y decidir cobertura. Confirmar condiciones, cancelación y cuestionario médico.</span>
+          </label>
+          <span class="owner-badge" title="Juntos">✦</span>
+        </div>
+
+        <div class="subsection-label" data-i18n="s2sub4">Presupuesto total</div>
+
+        <div class="task-item" data-owner="together">
+          <label class="task-label">
+            <input type="checkbox" class="task-check" data-section="financiero" />
+            <span class="task-text" data-i18n="t_presupuesto_compra">Armar presupuesto completo de compra: precio, notario, taxatie, advisor, bank guarantee, mudanza, renovación, muebles, buffer.</span>
+          </label>
+          <span class="owner-badge" title="Juntos">✦</span>
+        </div>
+
+        <div class="task-item" data-owner="together">
+          <label class="task-label">
+            <input type="checkbox" class="task-check" data-section="financiero" />
+            <span class="task-text" data-i18n="t_presupuesto_fases">Armar presupuesto de obras por fases: antes de mudanza / 3 meses / 1 año / 4-5 años / largo plazo.</span>
+          </label>
+          <span class="owner-badge" title="Juntos">✦</span>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION 3 -->
+    <section class="task-section" data-section="tecnico">
+      <div class="section-header" onclick="toggleSection('tecnico')">
+        <div class="section-meta">
+          <span class="section-num">03</span>
+          <div>
+            <h2 class="section-title" data-i18n="s3title">Técnico, inspección y reparaciones</h2>
+            <p class="section-desc" data-i18n="s3desc">Informe técnico, reparaciones al vendedor, final inspection y seguridad básica.</p>
+          </div>
+        </div>
+        <div class="section-right">
+          <div class="mini-progress">
+            <div class="mini-bar-fill" id="bar-tecnico"></div>
+          </div>
+          <span class="mini-pct" id="pct-tecnico">0%</span>
+          <span class="chevron" id="chev-tecnico">↓</span>
+        </div>
+      </div>
+      <div class="task-list" id="list-tecnico">
+
+        <div class="subsection-label" data-i18n="s3sub1">Informe técnico</div>
+
+        <div class="task-item" data-owner="belen">
+          <label class="task-label">
+            <input type="checkbox" class="task-check" data-section="tecnico" />
+            <span class="task-text" data-i18n="t_informe_guardar">Guardar informe técnico final y compartirlo con Edwin y contratistas relevantes.</span>
+          </label>
+          <span class="owner-badge" title="Belén">🧞‍♀️</span>
+        </div>
+
+        <div class="task-item" data-owner="together">
+          <label class="task-label">
+            <input type="checkbox" class="task-check" data-section="tecnico" />
+            <span class="task-text" data-i18n="t_informe_revision">Revisar con Edwin si algo del informe justifica pedir reparación o compensación al vendedor.</span>
+          </label>
+          <span class="owner-badge" title="Juntos">✦</span>
+        </div>
+
+        <div class="subsection-label" data-i18n="s3sub2">Reparaciones a pedir al vendedor</div>
+
+        <div class="task-item" data-owner="belen">
+          <label class="task-label">
+            <input type="checkbox" class="task-check" data-section="tecnico" />
+            <span class="task-text" data-i18n="t_boiler_factura">Pedir factura reciente de mantenimiento de boiler antes de la transferencia.</span>
+          </label>
+          <span class="owner-badge" title="Belén">🧞‍♀️</span>
+        </div>
+
+        <div class="task-item" data-owner="together">
+          <label class="task-label">
+            <input type="checkbox" class="task-check" data-section="tecnico" />
+            <span class="task-text" data-i18n="t_reparaciones_ducha">Pedir reparación de juntas/sellado y baldosa rota de ducha, o compensación de €650.</span>
+          </label>
+          <span class="owner-badge" title="Juntos">✦</span>
+        </div>
+
+        <div class="subsection-label" data-i18n="s3sub3">Final inspection</div>
+
+        <div class="task-item" data-owner="together">
+          <label class="task-label">
+            <input type="checkbox" class="task-check" data-section="tecnico" />
+            <span class="task-text" data-i18n="t_final_inspection">Revisar boiler, calefacción, agua, electricidad, ventanas, baño, medidores, llaves. Sacar fotos y videos. Confirmar que la casa esté vacía.</span>
+          </label>
+          <span class="owner-badge" title="Juntos">✦</span>
+        </div>
+
+        <div class="subsection-label" data-i18n="s3sub4">Seguridad básica</div>
+
+        <div class="task-item" data-owner="filippo">
+          <label class="task-label">
+            <input type="checkbox" class="task-check" data-section="tecnico" />
+            <span class="task-text" data-i18n="t_detectores">Comprar e instalar detectores de humo en cada planta y CO detector cerca del boiler.</span>
+          </label>
+          <span class="owner-badge" title="Filippo">🧞</span>
+        </div>
+
+        <div class="task-item" data-owner="filippo">
+          <label class="task-label">
+            <input type="checkbox" class="task-check" data-section="tecnico" />
+            <span class="task-text" data-i18n="t_cerraduras">Revisar y cambiar cilindros de cerraduras si hace falta.</span>
+          </label>
+          <span class="owner-badge" title="Filippo">🧞</span>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION 4 -->
+    <section class="task-section" data-section="remodelacion">
+      <div class="section-header" onclick="toggleSection('remodelacion')">
+        <div class="section-meta">
+          <span class="section-num">04</span>
+          <div>
+            <h2 class="section-title" data-i18n="s4title">Remodelación inicial</h2>
+            <p class="section-desc" data-i18n="s4desc">Suelo, cocina, baño, pintura, pared acústica y referencias de estilo.</p>
+          </div>
+        </div>
+        <div class="section-right">
+          <div class="mini-progress">
+            <div class="mini-bar-fill" id="bar-remodelacion"></div>
+          </div>
+          <span class="mini-pct" id="pct-remodelacion">0%</span>
+          <span class="chevron" id="chev-remodelacion">↓</span>
+        </div>
+      </div>
+      <div class="task-list" id="list-remodelacion">
+
+        <div class="subsection-label" data-i18n="s4sub1">Estrategia general</div>
+
+        <div class="task-item" data-owner="together">
+          <label class="task-label">
+            <input type="checkbox" class="task-check" data-section="remodelacion" />
+            <span class="task-text" data-i18n="t_estrategia">Definir qué se hace antes de mudanza (suelo beneden, cocina, pintura, seguridad) y qué puede esperar.</span>
+          </label>
+          <span class="owner-badge" title="Juntos">✦</span>
+        </div>
+
+        <div class="subsection-label" data-i18n="s4sub2">Suelo beneden (~55 m²)</div>
+
+        <div class="task-item" data-owner="together">
+          <label class="task-label">
+            <input type="checkbox" class="task-check" data-section="remodelacion" />
+            <span class="task-text" data-i18n="t_suelo_medidas">Confirmar medidas exactas de woonkamer, oficina beneden y hal. Verificar si el suelo está vlak en egaal.</span>
+          </label>
+          <span class="owner-badge" title="Juntos">✦</span>
+        </div>
+
+        <div class="task-item" data-owner="belen">
+          <label class="task-label">
+            <input type="checkbox" class="task-check" data-section="remodelacion" />
+            <span class="task-text" data-i18n="t_suelo_vve">Confirmar norma VvE de acústica exacta (dB/ΔLlin/ΔLw) y si el sistema debe aprobarse antes de instalar.</span>
+          </label>
+          <span class="owner-badge" title="Belén">🧞‍♀️</span>
+        </div>
+
+        <div class="task-item" data-owner="together">
+          <label class="task-label">
+            <input type="checkbox" class="task-check" data-section="remodelacion" />
+            <span class="task-text" data-i18n="t_suelo_presupuestos">Pedir presupuestos para subestructura: Fermacell, corcho acústico, underlay tipo Firstfloor Goldline. Comparar altura, precio, plazo.</span>
+          </label>
+          <span class="owner-badge" title="Juntos">✦</span>
+        </div>
+
+        <div class="task-item" data-owner="together">
+          <label class="task-label">
+            <input type="checkbox" class="task-check" data-section="remodelacion" />
+            <span class="task-text" data-i18n="t_suelo_showroom">🎨 <strong data-i18n="pinterest">Referencias Pinterest:</strong> <span data-i18n="t_suelo_pinterest_desc">buscar inspiración de color y acabado de suelo (roble claro, multiplank, visgraat, tono cálido no gris)</span>. Visitar showrooms en Amsterdam.</span>
+          </label>
+          <span class="owner-badge" title="Juntos">✦</span>
+        </div>
+
+        <div class="task-item" data-owner="together">
+          <label class="task-label">
+            <input type="checkbox" class="task-check" data-section="remodelacion" />
+            <span class="task-text" data-i18n="t_suelo_muestras">Pedir muestras grandes para ver con luz real en la casa. Confirmar misma partida (zelfde batchnummer) para 55 m².</span>
+          </label>
+          <span class="owner-badge" title="Juntos">✦</span>
+        </div>
+
+        <div class="subsection-label" data-i18n="s4sub3">Suelo de cocina</div>
+
+        <div class="task-item" data-owner="together">
+          <label class="task-label">
+            <input type="checkbox" class="task-check" data-section="remodelacion" />
+            <span class="task-text" data-i18n="t_cocina_azulejo_ref">🎨 <strong data-i18n="pinterest">Referencias Pinterest:</strong> <span data-i18n="t_cocina_pinterest_desc">buscar azulejos off-white, ivory, limestone look, travertine, marmerlook cálido (60x60 / 60x120)</span>.</span>
+          </label>
+          <span class="owner-badge" title="Juntos">✦</span>
+        </div>
+
+        <div class="task-item" data-owner="together">
+          <label class="task-label">
+            <input type="checkbox" class="task-check" data-section="remodelacion" />
+            <span class="task-text" data-i18n="t_cocina_azulejo_tienda">Ver azulejos en vivo. Confirmar mismo tono y calibre. Coordinar transición con suelo de woonkamer.</span>
+          </label>
+          <span class="owner-badge" title="Juntos">✦</span>
+        </div>
+
+        <div class="subsection-label" data-i18n="s4sub4">Cocina</div>
+
+        <div class="task-item" data-owner="together">
+          <label class="task-label">
+            <input type="checkbox" class="task-check" data-section="remodelacion" />
+            <span class="task-text" data-i18n="t_cocina_ref">🎨 <strong data-i18n="pinterest">Referencias Pinterest:</strong> <span data-i18n="t_cocina_ref_desc">buscar cocinas IKEA METOD off-white/shaker, backsplash verde menta/sage, electrodomésticos integrados</span>.</span>
+          </label>
+          <span class="owner-badge" title="Juntos">✦</span>
+        </div>
+
+        <div class="task-item" data-owner="together">
+          <label class="task-label">
+            <input type="checkbox" class="task-check" data-section="remodelacion" />
+            <span class="task-text" data-i18n="t_cocina_medidas">Subir fotos y medidas: largo, ancho, altura, ventana, puerta balcón, agua/gas/ventilación. Diseñar cocina IKEA METOD.</span>
+          </label>
+          <span class="owner-badge" title="Juntos">✦</span>
+        </div>
+
+        <div class="task-item" data-owner="filippo">
+          <label class="task-label">
+            <input type="checkbox" class="task-check" data-section="remodelacion" />
+            <span class="task-text" data-i18n="t_cocina_electro">Confirmar que la instalación eléctrica single-phase alcanza para inducción, horno, lavavajillas. Decidir electrodomésticos.</span>
+          </label>
+          <span class="owner-badge" title="Filippo">🧞</span>
+        </div>
+
+        <div class="task-item" data-owner="filippo">
+          <label class="task-label">
+            <input type="checkbox" class="task-check" data-section="remodelacion" />
+            <span class="task-text" data-i18n="t_cocina_presupuesto">Pedir presupuesto IKEA y de instalación. Confirmar disponibilidad, plazos y garantías.</span>
+          </label>
+          <span class="owner-badge" title="Filippo">🧞</span>
+        </div>
+
+        <div class="subsection-label" data-i18n="s4sub5">Baño actual</div>
+
+        <div class="task-item" data-owner="together">
+          <label class="task-label">
+            <input type="checkbox" class="task-check" data-section="remodelacion" />
+            <span class="task-text" data-i18n="t_banio_reparaciones">Reparar juntas/sellado ducha y baldosa rota. Mejorar ventilación. Cambiar espejo, luz y accesorios si es barato.</span>
+          </label>
+          <span class="owner-badge" title="Juntos">✦</span>
+        </div>
+
+        <div class="subsection-label" data-i18n="s4sub6">Pared acústica / Oficina 2</div>
+
+        <div class="task-item" data-owner="together">
+          <label class="task-label">
+            <input type="checkbox" class="task-check" data-section="remodelacion" />
+            <span class="task-text" data-i18n="t_pared_ref">🎨 <strong data-i18n="pinterest">Referencias Pinterest:</strong> <span data-i18n="t_pared_ref_desc">buscar separaciones con pladur acústico, puertas sólidas y high glass / transom en livingrooms</span>.</span>
+          </label>
+          <span class="owner-badge" title="Juntos">✦</span>
+        </div>
+
+        <div class="task-item" data-owner="belen">
+          <label class="task-label">
+            <input type="checkbox" class="task-check" data-section="remodelacion" />
+            <span class="task-text" data-i18n="t_pared_vve">Consultar VvE si se requiere permiso para pared de pladur. Pedir presupuesto: metal studs + mineral wool + doble placa.</span>
+          </label>
+          <span class="owner-badge" title="Belén">🧞‍♀️</span>
+        </div>
+
+        <div class="subsection-label" data-i18n="s4sub7">Pintura</div>
+
+        <div class="task-item" data-owner="together">
+          <label class="task-label">
+            <input type="checkbox" class="task-check" data-section="remodelacion" />
+            <span class="task-text" data-i18n="t_pintura_ref">🎨 <strong data-i18n="pinterest">Referencias Pinterest:</strong> <span data-i18n="t_pintura_ref_desc">buscar interiores en warm white / ivory / off-white con luz natural cálida</span>.</span>
+          </label>
+          <span class="owner-badge" title="Juntos">✦</span>
+        </div>
+
+        <div class="task-item" data-owner="belen">
+          <label class="task-label">
+            <input type="checkbox" class="task-check" data-section="remodelacion" />
+            <span class="task-text" data-i18n="t_pintura_mateo">Pedir presupuesto a Mateo. Confirmar si se pinta antes o después del suelo y cómo protegerlo.</span>
+          </label>
+          <span class="owner-badge" title="Belén">🧞‍♀️</span>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION 5 -->
+    <section class="task-section" data-section="muebles">
+      <div class="section-header" onclick="toggleSection('muebles')">
+        <div class="section-meta">
+          <span class="section-num">05</span>
+          <div>
+            <h2 class="section-title" data-i18n="s5title">Muebles, storage y santuario</h2>
+            <p class="section-desc" data-i18n="s5desc">Dormitorio, living, oficina, entrada y estrategia de storage.</p>
+          </div>
+        </div>
+        <div class="section-right">
+          <div class="mini-progress">
+            <div class="mini-bar-fill" id="bar-muebles"></div>
+          </div>
+          <span class="mini-pct" id="pct-muebles">0%</span>
+          <span class="chevron" id="chev-muebles">↓</span>
+        </div>
+      </div>
+      <div class="task-list" id="list-muebles">
+
+        <div class="subsection-label" data-i18n="s5sub1">Dormitorio principal</div>
+
+        <div class="task-item" data-owner="together">
+          <label class="task-label">
+            <input type="checkbox" class="task-check" data-section="muebles" />
+            <span class="task-text" data-i18n="t_dormitorio_ref">🎨 <strong data-i18n="pinterest">Referencias Pinterest:</strong> <span data-i18n="t_dorm_pinterest_desc">buscar dormitorios-santuario con telas, luces cálidas, cortinas de techo, estilo quiet luxury</span>.</span>
+          </label>
+          <span class="owner-badge" title="Juntos">✦</span>
+        </div>
+
+        <div class="task-item" data-owner="belen">
+          <label class="task-label">
+            <input type="checkbox" class="task-check" data-section="muebles" />
+            <span class="task-text" data-i18n="t_dormitorio_cama">Planificar cama 160 cm (IKEA Mandal u otra con storage). Medir y diseñar walk-in closet.</span>
+          </label>
+          <span class="owner-badge" title="Belén">🧞‍♀️</span>
+        </div>
+
+        <div class="subsection-label" data-i18n="s5sub2">Living</div>
+
+        <div class="task-item" data-owner="together">
+          <label class="task-label">
+            <input type="checkbox" class="task-check" data-section="muebles" />
+            <span class="task-text" data-i18n="t_living_ref">🎨 <strong data-i18n="pinterest">Referencias Pinterest:</strong> <span data-i18n="t_living_pinterest_desc">buscar livings estilo 1920s Balanced Cozy / Quiet Luxury con proyector, plantas y alfombra azul/malva</span>.</span>
+          </label>
+          <span class="owner-badge" title="Juntos">✦</span>
+        </div>
+
+        <div class="task-item" data-owner="together">
+          <label class="task-label">
+            <input type="checkbox" class="task-check" data-section="muebles" />
+            <span class="task-text" data-i18n="t_living_layout">Ubicar IKEA LANDSKRONA verde claro y alfombra azul/turquesa/malva. Definir zona proyector, lámparas y plantas.</span>
+          </label>
+          <span class="owner-badge" title="Juntos">✦</span>
+        </div>
+
+        <div class="subsection-label" data-i18n="s5sub3">Oficina beneden</div>
+
+        <div class="task-item" data-owner="filippo">
+          <label class="task-label">
+            <input type="checkbox" class="task-check" data-section="muebles" />
+            <span class="task-text" data-i18n="t_oficina_layout">Ubicar escritorio sit-stand de Filippo. Alfombra Anders en oficina. Definir storage cerrado e iluminación de trabajo.</span>
+          </label>
+          <span class="owner-badge" title="Filippo">🧞</span>
+        </div>
+
+        <div class="subsection-label" data-i18n="s5sub4">Entrada / hal</div>
+
+        <div class="task-item" data-owner="together">
+          <label class="task-label">
+            <input type="checkbox" class="task-check" data-section="muebles" />
+            <span class="task-text" data-i18n="t_entrada_ref">🎨 <strong data-i18n="pinterest">Referencias Pinterest:</strong> <span data-i18n="t_entrada_pinterest_desc">buscar entradas estrechas con zapatero de madera/vintage, perchero, espejo y bandeja de llaves</span>.</span>
+          </label>
+          <span class="owner-badge" title="Juntos">✦</span>
+        </div>
+
+        <div class="task-item" data-owner="belen">
+          <label class="task-label">
+            <input type="checkbox" class="task-check" data-section="muebles" />
+            <span class="task-text" data-i18n="t_entrada_zapatero">Buscar zapatero estrecho, cálido, de madera o vintage. Medir profundidad junto al radiador.</span>
+          </label>
+          <span class="owner-badge" title="Belén">🧞‍♀️</span>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION 6 -->
+    <section class="task-section" data-section="mudanza">
+      <div class="section-header" onclick="toggleSection('mudanza')">
+        <div class="section-meta">
+          <span class="section-num">06</span>
+          <div>
+            <h2 class="section-title" data-i18n="s6title">Mudanza y transición</h2>
+            <p class="section-desc" data-i18n="s6desc">Marnixkade, movers, registro y administración post-mudanza.</p>
+          </div>
+        </div>
+        <div class="section-right">
+          <div class="mini-progress">
+            <div class="mini-bar-fill" id="bar-mudanza"></div>
+          </div>
+          <span class="mini-pct" id="pct-mudanza">0%</span>
+          <span class="chevron" id="chev-mudanza">↓</span>
+        </div>
+      </div>
+      <div class="task-list" id="list-mudanza">
+
+        <div class="subsection-label" data-i18n="s6sub1">Marnixkade</div>
+
+        <div class="task-item" data-owner="belen">
+          <label class="task-label">
+            <input type="checkbox" class="task-check" data-section="mudanza" />
+            <span class="task-text" data-i18n="t_marnixkade">Confirmar fecha hasta la que conservamos el cuarto. Decidir si mantenerlo algunas semanas durante las obras. Planear ritual de cierre.</span>
+          </label>
+          <span class="owner-badge" title="Belén">🧞‍♀️</span>
+        </div>
+
+        <div class="subsection-label" data-i18n="s6sub2">Mudanza</div>
+
+        <div class="task-item" data-owner="filippo">
+          <label class="task-label">
+            <input type="checkbox" class="task-check" data-section="mudanza" />
+            <span class="task-text" data-i18n="t_movers">Pedir presupuestos de movers. Confirmar lift, escalera y permisos de estacionamiento.</span>
+          </label>
+          <span class="owner-badge" title="Filippo">🧞</span>
+        </div>
+
+        <div class="task-item" data-owner="together">
+          <label class="task-label">
+            <input type="checkbox" class="task-check" data-section="mudanza" />
+            <span class="task-text" data-i18n="t_caja_primera_noche">Preparar caja de primera noche: sábanas, toallas, cargadores, medicinas, documentos, café/té, herramientas básicas, detector CO/humo.</span>
+          </label>
+          <span class="owner-badge" title="Juntos">✦</span>
+        </div>
+
+        <div class="task-item" data-owner="together">
+          <label class="task-label">
+            <input type="checkbox" class="task-check" data-section="mudanza" />
+            <span class="task-text" data-i18n="t_coordinar_mudanza">Coordinar fecha de mudanza con instalación de suelo y cocina. Empacar por zonas y etiquetar cajas.</span>
+          </label>
+          <span class="owner-badge" title="Juntos">✦</span>
+        </div>
+
+        <div class="subsection-label" data-i18n="s6sub3">Registro y administración</div>
+
+        <div class="task-item" data-owner="together">
+          <label class="task-label">
+            <input type="checkbox" class="task-check" data-section="mudanza" />
+            <span class="task-text" data-i18n="t_registro">Registrarse en la nueva dirección en gemeente dentro del plazo contractual.</span>
+          </label>
+          <span class="owner-badge" title="Juntos">✦</span>
+        </div>
+
+        <div class="task-item" data-owner="filippo">
+          <label class="task-label">
+            <input type="checkbox" class="task-check" data-section="mudanza" />
+            <span class="task-text" data-i18n="t_cambio_direccion">Cambiar dirección en banco, trabajo, seguros, médico/farmacia. Contratar energía, internet y agua.</span>
+          </label>
+          <span class="owner-badge" title="Filippo">🧞</span>
+        </div>
+
+        <div class="task-item" data-owner="belen">
+          <label class="task-label">
+            <input type="checkbox" class="task-check" data-section="mudanza" />
+            <span class="task-text" data-i18n="t_documentos_digitales">Guardar todos los documentos digitales en carpeta organizada. Confirmar contactos VvE.</span>
+          </label>
+          <span class="owner-badge" title="Belén">🧞‍♀️</span>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <p>🧞‍♀️ Belén &amp; 🧞 Filippo · Zaanstraat 314 · Amsterdam · 2026</p>
+    <p class="footer-sub" data-i18n="footer_sub">Una casa, un proyecto, dos genios.</p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

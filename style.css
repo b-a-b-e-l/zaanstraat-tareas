@@ -1,0 +1,438 @@
+/* =========================================
+   ZAANSTRAAT 314 · TAREAS
+   Inspirado en el dossier original
+   Paleta: crema, verde salvia, lila, azul
+   ========================================= */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --cream:      #F4F0E6;
+  --cream-dark: #EBE5D5;
+  --ink:        #2C2B27;
+  --ink-light:  #6B6760;
+  --sage:       #7A9B7A;
+  --sage-light: #A8C5A0;
+  --lila:       #9B8EC4;
+  --lila-light: #C4BAE0;
+  --lila-pale:  #EDE8F5;
+  --blue:       #6A92B8;
+  --blue-light: #A5C1D9;
+  --blue-pale:  #E5EEF6;
+  --together:   #B8A86A;
+  --together-pale: #F5F0E0;
+  --gold:       #C4A84F;
+  --border:     rgba(44,43,39,0.12);
+  --radius:     4px;
+  --transition: 0.3s ease;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--cream);
+  color: var(--ink);
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+/* ---- HEADER ---- */
+.site-header {
+  background: var(--ink);
+  color: var(--cream);
+  padding: 4rem 2rem 3rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.site-header::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse at 80% 0%, rgba(155,142,196,0.18) 0%, transparent 60%),
+    radial-gradient(ellipse at 10% 100%, rgba(106,146,184,0.15) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+.header-inner {
+  max-width: 860px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.address-eyebrow {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 400;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--sage-light);
+  margin-bottom: 1.2rem;
+}
+
+.site-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(2.8rem, 6vw, 4.5rem);
+  font-weight: 300;
+  line-height: 1.1;
+  color: var(--cream);
+  margin-bottom: 1rem;
+}
+
+.site-title em {
+  font-style: italic;
+  font-weight: 300;
+  color: var(--lila-light);
+}
+
+.header-subtitle {
+  font-size: 0.95rem;
+  color: rgba(244,240,230,0.65);
+  margin-bottom: 2rem;
+  max-width: 520px;
+}
+
+/* ---- CONTROLS ---- */
+.controls {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  margin-bottom: 2.5rem;
+}
+
+.lang-switcher {
+  display: flex;
+  gap: 0;
+  border: 1px solid rgba(244,240,230,0.25);
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.lang-btn {
+  background: transparent;
+  border: none;
+  color: rgba(244,240,230,0.6);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 400;
+  letter-spacing: 0.1em;
+  padding: 0.35rem 0.9rem;
+  cursor: pointer;
+  transition: all var(--transition);
+}
+
+.lang-btn.active,
+.lang-btn:hover {
+  background: var(--lila);
+  color: var(--cream);
+}
+
+.legend {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.badge {
+  font-size: 0.72rem;
+  padding: 0.3rem 0.75rem;
+  border-radius: 20px;
+  font-weight: 400;
+  letter-spacing: 0.04em;
+}
+
+.badge-belen {
+  background: rgba(155,142,196,0.25);
+  color: var(--lila-light);
+  border: 1px solid rgba(155,142,196,0.35);
+}
+
+.badge-filippo {
+  background: rgba(106,146,184,0.25);
+  color: var(--blue-light);
+  border: 1px solid rgba(106,146,184,0.35);
+}
+
+.badge-together {
+  background: rgba(196,168,79,0.2);
+  color: #D4B86A;
+  border: 1px solid rgba(196,168,79,0.3);
+}
+
+/* ---- PROGRESS GLOBAL ---- */
+.progress-global {
+  max-width: 520px;
+}
+
+.progress-label {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.78rem;
+  color: rgba(244,240,230,0.6);
+  margin-bottom: 0.5rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.progress-pct {
+  color: var(--sage-light);
+  font-weight: 400;
+}
+
+.progress-bar-track {
+  height: 3px;
+  background: rgba(244,240,230,0.15);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.progress-bar-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--sage-light), var(--lila-light));
+  border-radius: 2px;
+  width: 0%;
+  transition: width 0.5s ease;
+}
+
+/* ---- MAIN ---- */
+.main-content {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem 4rem;
+}
+
+/* ---- TASK SECTION ---- */
+.task-section {
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 0;
+}
+
+.section-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.6rem 0;
+  cursor: pointer;
+  gap: 1rem;
+  transition: opacity var(--transition);
+  user-select: none;
+}
+
+.section-header:hover { opacity: 0.8; }
+
+.section-meta {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.2rem;
+  flex: 1;
+}
+
+.section-num {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.1rem;
+  font-weight: 300;
+  color: var(--ink-light);
+  padding-top: 0.15rem;
+  flex-shrink: 0;
+  min-width: 2rem;
+}
+
+.section-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(1.3rem, 3vw, 1.7rem);
+  font-weight: 400;
+  line-height: 1.2;
+  color: var(--ink);
+}
+
+.section-desc {
+  font-size: 0.82rem;
+  color: var(--ink-light);
+  margin-top: 0.2rem;
+  line-height: 1.5;
+}
+
+.section-right {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-shrink: 0;
+}
+
+.mini-progress {
+  width: 60px;
+  height: 3px;
+  background: var(--border);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.mini-bar-fill {
+  height: 100%;
+  background: var(--sage);
+  border-radius: 2px;
+  width: 0%;
+  transition: width 0.4s ease;
+}
+
+.mini-pct {
+  font-size: 0.72rem;
+  color: var(--ink-light);
+  min-width: 2.5rem;
+  text-align: right;
+}
+
+.chevron {
+  font-size: 0.9rem;
+  color: var(--ink-light);
+  transition: transform var(--transition);
+  display: inline-block;
+}
+
+.chevron.open {
+  transform: rotate(180deg);
+}
+
+/* ---- TASK LIST ---- */
+.task-list {
+  display: none;
+  padding-bottom: 1.5rem;
+  animation: fadeIn 0.25s ease;
+}
+
+.task-list.open {
+  display: block;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.subsection-label {
+  font-size: 0.68rem;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ink-light);
+  padding: 1.2rem 0 0.5rem;
+  border-top: 1px solid var(--border);
+  margin-top: 0.5rem;
+}
+
+.subsection-label:first-child {
+  border-top: none;
+  margin-top: 0;
+}
+
+.task-item {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding: 0.65rem 0;
+  border-bottom: 1px solid rgba(44,43,39,0.06);
+  transition: background var(--transition);
+}
+
+.task-item:last-child { border-bottom: none; }
+
+.task-item:hover {
+  background: rgba(44,43,39,0.02);
+  margin: 0 -0.5rem;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+
+/* Owner accent strips */
+.task-item[data-owner="belen"] {
+  border-left: 2px solid var(--lila);
+  padding-left: 0.75rem;
+}
+.task-item[data-owner="filippo"] {
+  border-left: 2px solid var(--blue);
+  padding-left: 0.75rem;
+}
+.task-item[data-owner="together"] {
+  border-left: 2px solid var(--together);
+  padding-left: 0.75rem;
+}
+
+.task-label {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  cursor: pointer;
+  flex: 1;
+}
+
+.task-check {
+  width: 16px;
+  height: 16px;
+  margin-top: 0.25rem;
+  flex-shrink: 0;
+  cursor: pointer;
+  accent-color: var(--sage);
+}
+
+.task-text {
+  font-size: 0.9rem;
+  line-height: 1.55;
+  color: var(--ink);
+  transition: color var(--transition);
+}
+
+.task-check:checked + .task-text {
+  text-decoration: line-through;
+  color: var(--ink-light);
+}
+
+.owner-badge {
+  font-size: 1rem;
+  flex-shrink: 0;
+  padding-top: 0.1rem;
+  opacity: 0.85;
+}
+
+/* Pinterest hint */
+.task-text strong {
+  color: var(--sage);
+  font-weight: 500;
+}
+
+/* ---- FOOTER ---- */
+.site-footer {
+  background: var(--ink);
+  color: rgba(244,240,230,0.5);
+  text-align: center;
+  padding: 2.5rem 1.5rem;
+  font-size: 0.82rem;
+  line-height: 2;
+}
+
+.footer-sub {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 1rem;
+  color: rgba(244,240,230,0.3);
+}
+
+/* ---- RESPONSIVE ---- */
+@media (max-width: 600px) {
+  .site-header { padding: 2.5rem 1.2rem 2rem; }
+  .main-content { padding: 1rem 1rem 3rem; }
+  .section-meta { gap: 0.75rem; }
+  .section-num { display: none; }
+  .controls { gap: 0.75rem; }
+  .mini-progress { display: none; }
+}
