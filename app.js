@@ -520,13 +520,14 @@ const TRANSLATIONS = {
 // ---- STATE ----
 let currentLang = localStorage.getItem('zaan-lang') || 'es';
 let checkStates = JSON.parse(localStorage.getItem('zaan-checks') || '{}');
-let ownerOverrides = {};  // always start fresh — no saved owner assignments
+let ownerStates = JSON.parse(localStorage.getItem('zaan-owners') || '{}');
 let activeFilters = new Set(['belen', 'filippo', 'together', 'unassigned']);
 
 // ---- INIT ----
 document.addEventListener('DOMContentLoaded', () => {
   applyLanguage(currentLang);
   restoreChecks();
+  restoreOwners();
   updateAllProgress();
   setActiveLangBtn(currentLang);
   applyFilters();
@@ -584,6 +585,12 @@ document.addEventListener('DOMContentLoaded', () => {
       btn.textContent = ownerEmoji(newOwner);
       btn.title = ownerTitle(newOwner);
       dropOpt.closest('.owner-wrap').classList.remove('open');
+      // Save to localStorage
+      const taskId = taskItem.dataset.taskId;
+      if (taskId) {
+        ownerStates[taskId] = newOwner;
+        localStorage.setItem('zaan-owners', JSON.stringify(ownerStates));
+      }
       applyFilters();
       return;
     }
@@ -782,6 +789,22 @@ function restoreChecks() {
   document.querySelectorAll('.task-check').forEach((cb, idx) => {
     if (checkStates[idx]) {
       cb.checked = true;
+    }
+  });
+}
+
+// ---- OWNERS RESTORE ----
+function restoreOwners() {
+  document.querySelectorAll('.task-item[data-task-id]').forEach(item => {
+    const taskId = item.dataset.taskId;
+    if (ownerStates[taskId]) {
+      const owner = ownerStates[taskId];
+      item.dataset.owner = owner;
+      const btn = item.querySelector('.owner-badge');
+      if (btn) {
+        btn.textContent = ownerEmoji(owner);
+        btn.title = ownerTitle(owner);
+      }
     }
   });
 }
