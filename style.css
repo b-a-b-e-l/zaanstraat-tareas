@@ -638,6 +638,162 @@ body {
   color: rgba(244,240,230,0.3);
 }
 
+/* ---- TASK ITEM ACTIONS (guide button + owner) ---- */
+.task-item-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  flex-shrink: 0;
+}
+
+/* ---- GUIDE BUTTON ---- */
+.guide-btn {
+  background: rgba(184,168,106,0.18);
+  border: 1px solid rgba(184,168,106,0.4);
+  color: var(--together);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  padding: 0.35rem 0.85rem;
+  border-radius: 16px;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background var(--transition), color var(--transition), transform 0.15s ease;
+}
+
+.guide-btn:hover {
+  background: var(--together);
+  color: #fff;
+  transform: scale(1.03);
+}
+
+/* ---- SAMENLEVINGSCONTRACT GUIDE MODAL ---- */
+.guide-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(44,43,39,0.55);
+  z-index: 500;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 1rem;
+  backdrop-filter: blur(2px);
+}
+
+.guide-overlay.open {
+  display: flex;
+}
+
+.guide-modal {
+  background: var(--cream);
+  border-radius: 12px;
+  max-width: 680px;
+  width: 100%;
+  max-height: 85vh;
+  overflow-y: auto;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+  animation: guideIn 0.25s ease;
+}
+
+@keyframes guideIn {
+  from { opacity: 0; transform: translateY(12px) scale(0.98); }
+  to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.guide-modal-header {
+  position: sticky;
+  top: 0;
+  background: var(--ink);
+  color: var(--cream);
+  padding: 1.25rem 1.5rem;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  border-radius: 12px 12px 0 0;
+}
+
+.guide-modal-header h3 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.3rem;
+  font-weight: 400;
+  line-height: 1.3;
+}
+
+.guide-close {
+  background: rgba(244,240,230,0.12);
+  border: none;
+  color: var(--cream);
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 0.9rem;
+  flex-shrink: 0;
+  transition: background var(--transition);
+}
+
+.guide-close:hover {
+  background: rgba(244,240,230,0.25);
+}
+
+.guide-modal-body {
+  padding: 1.5rem 1.75rem 2rem;
+}
+
+.guide-note {
+  font-size: 0.8rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-bottom: 1.25rem;
+  padding-bottom: 0.9rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.guide-modal-body h4 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: var(--ink);
+  margin-top: 1.4rem;
+  margin-bottom: 0.5rem;
+}
+
+.guide-modal-body h4:first-of-type {
+  margin-top: 0;
+}
+
+.guide-modal-body p {
+  font-size: 0.88rem;
+  line-height: 1.6;
+  color: var(--ink);
+  margin-bottom: 0.5rem;
+}
+
+.guide-modal-body ul {
+  margin: 0.4rem 0 0.6rem 1.2rem;
+}
+
+.guide-modal-body li {
+  font-size: 0.88rem;
+  line-height: 1.6;
+  color: var(--ink);
+  margin-bottom: 0.3rem;
+}
+
+.guide-modal-body strong {
+  color: var(--sage);
+  font-weight: 500;
+}
+
+@media (max-width: 600px) {
+  .task-item-actions { gap: 0.4rem; }
+  .guide-btn { font-size: 0.68rem; padding: 0.3rem 0.6rem; }
+  .guide-modal { max-height: 90vh; }
+  .guide-modal-body { padding: 1.25rem 1.1rem 1.5rem; }
+}
+
 /* ---- RESPONSIVE ---- */
 @media (max-width: 600px) {
   .site-header { padding: 2.5rem 1.2rem 2rem; }

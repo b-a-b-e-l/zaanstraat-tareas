@@ -14,6 +14,51 @@
   <!-- TOOLTIP GLOBAL -->
   <div class="tip-popup" id="tipPopup"></div>
 
+  <!-- SAMENLEVINGSCONTRACT GUIDE MODAL -->
+  <div class="guide-overlay" id="guideOverlay" onclick="closeGuideOnOverlay(event)">
+    <div class="guide-modal">
+      <div class="guide-modal-header">
+        <h3>📌 Guía de conversación: Nuestro Samenlevingscontract</h3>
+        <button class="guide-close" onclick="closeGuide()">✕</button>
+      </div>
+      <div class="guide-modal-body">
+
+        <p class="guide-note">Esta guía siempre se muestra en español, el idioma en que la escribieron.</p>
+
+        <h4>1. La Casa y la Entrada (Downpayments)</h4>
+        <p><strong>El acuerdo:</strong> Si uno de los dos aporta más ahorros personales para la entrada (eigen geld) o las reformas, queremos protegerlo. En caso de vender la casa en el futuro, cada uno recupera primero su aporte inicial exacto y, después, las ganancias restantes se dividen al 50/50.</p>
+        <p><strong>Para hablar:</strong> ¿Cuánto va a poner cada uno exactamente para la compra y los gastos de gestión (kosten koper)?</p>
+
+        <h4>2. Gastos Mensuales y Cuenta Conjunta</h4>
+        <p><strong>La cuenta común:</strong> Abriremos una cuenta bancaria conjunta (en/of rekening). Esta cuenta se usará únicamente para los gastos fijos del hogar: hipoteca, facturas de servicios (luz, gas, internet), impuestos municipales y compras del día a día (comida, cosas de la casa).</p>
+        <p><strong>El reparto:</strong> ¿Cómo transferiremos el dinero mensualmente?</p>
+        <ul>
+          <li>¿Hacemos un fondo fijo 50/50 donde cada uno pone la misma cantidad?</li>
+          <li>¿O aportamos proporcionalmente según el salario de cada uno (el que gane más aporta un porcentaje mayor)?</li>
+        </ul>
+
+        <h4>3. Bienes Personales vs. Bienes Comunes</h4>
+        <p><strong>El acuerdo:</strong> Como no tenemos autos ni arte caro, la regla general en el contrato será que las cosas que compremos para la casa a partir de ahora serán de los dos. Las cosas personales (computadoras, teléfonos, ropa o instrumentos de valor) siguen siendo de cada uno.</p>
+        <p><strong>Para hablar:</strong> ¿Hay algún mueble u objeto de valor que traigamos de antes que queramos dejar anotado explícitamente en una lista adjunta?</p>
+
+        <h4>4. Protección ante Desempleo o Caída de Ingresos</h4>
+        <p><strong>El acuerdo:</strong> Queremos una red de seguridad si las cosas van mal financieramente. Si uno de los dos pierde el trabajo o ve reducidos sus ingresos drásticamente, su obligación de aportar a la cuenta común baja automáticamente (incluso a cero si es necesario) para que el otro cubra el hogar temporalmente, sin que esto se convierta en una deuda acumulada entre nosotros.</p>
+
+        <h4>5. Protección ante Enfermedad (Poder Médico)</h4>
+        <p><strong>El acuerdo:</strong> Si alguno cae gravemente enfermo o sufre un accidente y queda incapacitado para decidir, queremos asegurarnos legalmente de que el otro sea quien tome las decisiones médicas y tenga acceso total a la información del hospital, por encima de los padres o familiares directos.</p>
+
+        <h4>6. Protección ante la Muerte (Imprescindible para la Casa)</h4>
+        <p><strong>El acuerdo:</strong> Si alguno llega a fallecer, el contrato debe incluir la cláusula de supervivencia (verblijvingsbeding). Esto garantiza que la parte de la casa y la hipoteca del fallecido pasen automáticamente al superviviente, permitiéndole quedarse a vivir en el hogar sin que la familia del otro pueda reclamar su parte de la propiedad. También incluiremos el reconocimiento mutuo para cobrar la pensión de viudedad del trabajo (partnerpensioen).</p>
+
+        <h4>💡 Nota sobre el Testamento (tu pregunta sobre el coste)</h4>
+        <p>Sí, el testamento tiene un coste extra. El Samenlevingscontract con la cláusula de supervivencia protege perfectamente los bienes que tienen a nombre de los dos (como la casa y la cuenta conjunta). Sin embargo, no sirve para heredar los bienes privados (el dinero que te quede en tus cuentas bancarias personales, inversiones, etc.).</p>
+        <p>Para proteger eso al 100%, el notario les ofrecerá hacer un testamento para cada uno (testamenten).</p>
+        <p><strong>El coste:</strong> Las notarías suelen ofrecer "paquetes para compradores de vivienda" que incluyen el contrato de cohabitación y los dos testamentos. Si el contrato solo cuesta entre €400 y €800, el paquete completo con los dos testamentos suele rondar entre los €900 y €1.400 en total, dependiendo de la notaría. Vale la pena pedir presupuesto por el pack completo porque sale mucho más barato que hacer los testamentos por separado en el futuro.</p>
+
+      </div>
+    </div>
+  </div>
+
   <!-- COUNTDOWN WIDGET -->
   <div class="countdown-widget" id="countdownWidget">
     <div class="cd-label">entrega</div>
@@ -110,7 +155,7 @@
         <div class="task-item" data-owner="unassigned">
           <label class="task-label">
             <input type="checkbox" class="task-check" data-section="papeles" />
-            <span class="task-text" data-i18n="t_clausulas">Revisar cláusulas clave: <span class="tip" data-tip="non_self_occupancy">non-self-occupancy</span>, <span class="tip" data-tip="age_clause">age clause</span>, <span class="tip" data-tip="asbestos_clause">asbestos clause</span>, <span class="tip" data-tip="foundation_waiver">foundation waiver</span>, <span class="tip" data-tip="resale_restriction">resale restriction</span>, <span class="tip" data-tip="fire_rated_ceiling">fire-rated ceiling</span>, <span class="tip" data-tip="splitsingstekening">splitsingstekening</span>.</span>
+            <span class="task-text" data-i18n="t_clausulas">Revisar cláusulas clave: <span class="tip" data-tip="non_self_occupancy">non-self-occupancy</span>, <span class="tip" data-tip="age_clause">age clause</span>, <span class="tip" data-tip="asbestos_clause">asbestos clause</span>, <span class="tip" data-tip="foundation_waiver">foundation waiver</span>, <span class="tip" data-tip="eigenbewoning">owner-occupancy</span>, <span class="tip" data-tip="resale_restriction">resale restriction</span>, <span class="tip" data-tip="fire_rated_ceiling">fire-rated ceiling</span>, <span class="tip" data-tip="splitsingstekening">splitsingstekening</span>.</span>
           </label>
           <div class="owner-wrap"><button class="owner-badge" title="Sin asignar">✪</button><div class="owner-dropdown"><button class="drop-opt" data-owner-val="belen">🧞‍♀️</button><button class="drop-opt" data-owner-val="filippo">🧞</button><button class="drop-opt" data-owner-val="together">💕</button><button class="drop-opt" data-owner-val="unassigned">✪</button></div></div>
         </div>
@@ -199,6 +244,19 @@
           <div class="owner-wrap"><button class="owner-badge" title="Sin asignar">✪</button><div class="owner-dropdown"><button class="drop-opt" data-owner-val="belen">🧞‍♀️</button><button class="drop-opt" data-owner-val="filippo">🧞</button><button class="drop-opt" data-owner-val="together">💕</button><button class="drop-opt" data-owner-val="unassigned">✪</button></div></div>
         </div>
 
+        <div class="subsection-label" data-i18n="s1sub4">Samenlevingscontract y testamento</div>
+
+        <div class="task-item" data-owner="together">
+          <label class="task-label">
+            <input type="checkbox" class="task-check" data-section="papeles" />
+            <span class="task-text" data-i18n="t_samenleving">Leer y conversar la guía del <span class="tip" data-tip="samenlevingscontract">samenlevingscontract</span> antes de la cita con el notario: aportes a la entrada, cuenta conjunta, bienes, protección por desempleo/enfermedad/fallecimiento, y si conviene sumar testamento (testamenten) al mismo paquete.</span>
+          </label>
+          <div class="task-item-actions">
+            <button class="guide-btn" onclick="openGuide(event)" data-i18n="guide_btn">📖 Ver guía completa</button>
+            <div class="owner-wrap"><button class="owner-badge" title="Juntos">💕</button><div class="owner-dropdown"><button class="drop-opt" data-owner-val="belen">🧞‍♀️</button><button class="drop-opt" data-owner-val="filippo">🧞</button><button class="drop-opt" data-owner-val="together">💕</button><button class="drop-opt" data-owner-val="unassigned">✪</button></div></div>
+          </div>
+        </div>
+
       </div>
     </section>
 
@@ -235,7 +293,7 @@
         <div class="task-item" data-owner="unassigned">
           <label class="task-label">
             <input type="checkbox" class="task-check" data-section="financiero" />
-            <span class="task-text" data-i18n="t_simulaciones">Revisar simulaciones con y sin bouwdepot: tipo de interés, cuota mensual, duración fija.</span>
+            <span class="task-text" data-i18n="t_simulaciones">Revisar simulaciones con y sin <span class="tip" data-tip="bouwdepot">bouwdepot</span>: <span class="tip" data-tip="tipo_interes">tipo de interés</span>, <span class="tip" data-tip="cuota_mensual">cuota mensual</span>, <span class="tip" data-tip="periodo_fijo">duración fija</span>.</span>
           </label>
           <div class="owner-wrap"><button class="owner-badge" title="Sin asignar">✪</button><div class="owner-dropdown"><button class="drop-opt" data-owner-val="belen">🧞‍♀️</button><button class="drop-opt" data-owner-val="filippo">🧞</button><button class="drop-opt" data-owner-val="together">💕</button><button class="drop-opt" data-owner-val="unassigned">✪</button></div></div>
         </div>
@@ -243,7 +301,7 @@
         <div class="task-item" data-owner="unassigned">
           <label class="task-label">
             <input type="checkbox" class="task-check" data-section="financiero" />
-            <span class="task-text" data-i18n="t_periodo_fijo">Decidir duración del período fijo de la hipoteca (10, 20 o 30 años) y comparar ofertas.</span>
+            <span class="task-text" data-i18n="t_periodo_fijo">Decidir <span class="tip" data-tip="periodo_fijo">duración del período fijo</span> de la hipoteca (10, 20 o 30 años) y comparar ofertas. Al vencer, el banco puede cambiar el tipo de interés.</span>
           </label>
           <div class="owner-wrap"><button class="owner-badge" title="Sin asignar">✪</button><div class="owner-dropdown"><button class="drop-opt" data-owner-val="belen">🧞‍♀️</button><button class="drop-opt" data-owner-val="filippo">🧞</button><button class="drop-opt" data-owner-val="together">💕</button><button class="drop-opt" data-owner-val="unassigned">✪</button></div></div>
         </div>
@@ -287,7 +345,7 @@
         <div class="task-item" data-owner="unassigned">
           <label class="task-label">
             <input type="checkbox" class="task-check" data-section="financiero" />
-            <span class="task-text" data-i18n="t_seguro_vida">Revisar oferta TAF (€300k/€400k/€500k) y decidir cobertura. Confirmar condiciones, cancelación y cuestionario médico.</span>
+            <span class="task-text" data-i18n="t_seguro_vida">Revisar oferta <span class="tip" data-tip="taf">TAF</span> (€300k/€400k/€500k) y decidir cobertura. Confirmar condiciones, cancelación y <span class="tip" data-tip="cuestionario_medico">cuestionario médico</span>.</span>
           </label>
           <div class="owner-wrap"><button class="owner-badge" title="Sin asignar">✪</button><div class="owner-dropdown"><button class="drop-opt" data-owner-val="belen">🧞‍♀️</button><button class="drop-opt" data-owner-val="filippo">🧞</button><button class="drop-opt" data-owner-val="together">💕</button><button class="drop-opt" data-owner-val="unassigned">✪</button></div></div>
         </div>
@@ -305,7 +363,7 @@
         <div class="task-item" data-owner="unassigned">
           <label class="task-label">
             <input type="checkbox" class="task-check" data-section="financiero" />
-            <span class="task-text" data-i18n="t_presupuesto_compra">Armar presupuesto completo de compra: precio, notario, taxatie, advisor, bank guarantee, mudanza, renovación, muebles, buffer.</span>
+            <span class="task-text" data-i18n="t_presupuesto_compra">Armar presupuesto completo de compra: precio, <span class="tip" data-tip="overdrachtsbelasting">overdrachtsbelasting</span>, notario, <span class="tip" data-tip="taxatie">taxatie</span>, <span class="tip" data-tip="hypotheekadviseur">advisor hipotecario</span>, <span class="tip" data-tip="bank_guarantee">bank guarantee</span>, mudanza, renovación, muebles, buffer.</span>
           </label>
           <div class="owner-wrap"><button class="owner-badge" title="Sin asignar">✪</button><div class="owner-dropdown"><button class="drop-opt" data-owner-val="belen">🧞‍♀️</button><button class="drop-opt" data-owner-val="filippo">🧞</button><button class="drop-opt" data-owner-val="together">💕</button><button class="drop-opt" data-owner-val="unassigned">✪</button></div></div>
         </div>
@@ -346,7 +404,7 @@
         <div class="task-item" data-owner="unassigned">
           <label class="task-label">
             <input type="checkbox" class="task-check" data-section="tecnico" />
-            <span class="task-text" data-i18n="t_informe_guardar">Guardar informe técnico final y compartirlo con Edwin y contratistas relevantes.</span>
+            <span class="task-text" data-i18n="t_informe_guardar">Guardar <span class="tip" data-tip="bouwkundige_keuring">informe técnico</span> final y compartirlo con Edwin y contratistas relevantes.</span>
           </label>
           <div class="owner-wrap"><button class="owner-badge" title="Sin asignar">✪</button><div class="owner-dropdown"><button class="drop-opt" data-owner-val="belen">🧞‍♀️</button><button class="drop-opt" data-owner-val="filippo">🧞</button><button class="drop-opt" data-owner-val="together">💕</button><button class="drop-opt" data-owner-val="unassigned">✪</button></div></div>
         </div>
@@ -561,7 +619,7 @@
         <div class="task-item" data-owner="unassigned">
           <label class="task-label">
             <input type="checkbox" class="task-check" data-section="remodelacion" />
-            <span class="task-text" data-i18n="t_cocina_enchufes">Planificar reubicación de enchufes y puntos de agua/desagüe según diseño de cocina. Coordinar con electricista y fontanero.</span>
+            <span class="task-text" data-i18n="t_cocina_enchufes">Planificar reubicación de enchufes y puntos de agua/desagüe según diseño de cocina. Coordinar con <span class="tip" data-tip="electricista">electricista</span> y <span class="tip" data-tip="fontanero">fontanero</span>.</span>
           </label>
           <div class="owner-wrap"><button class="owner-badge" title="Sin asignar">✪</button><div class="owner-dropdown"><button class="drop-opt" data-owner-val="belen">🧞‍♀️</button><button class="drop-opt" data-owner-val="filippo">🧞</button><button class="drop-opt" data-owner-val="together">💕</button><button class="drop-opt" data-owner-val="unassigned">✪</button></div></div>
         </div>
@@ -623,7 +681,7 @@
         <div class="task-item" data-owner="unassigned">
           <label class="task-label">
             <input type="checkbox" class="task-check" data-section="remodelacion" />
-            <span class="task-text" data-i18n="t_pared_vve">Consultar <span class="tip" data-tip="vve">VvE</span> si se requiere permiso para pared de <span class="tip" data-tip="pladur">pladur</span>. Pedir presupuesto: <span class="tip" data-tip="metal_studs">metal studs</span> + mineral wool + doble placa.</span>
+            <span class="task-text" data-i18n="t_pared_vve">Consultar <span class="tip" data-tip="vve">VvE</span> si se requiere permiso para pared de <span class="tip" data-tip="pladur">pladur</span>. Pedir presupuesto: <span class="tip" data-tip="metal_studs">metal studs</span> + <span class="tip" data-tip="mineral_wool">mineral wool</span> + doble placa.</span>
           </label>
           <div class="owner-wrap"><button class="owner-badge" title="Sin asignar">✪</button><div class="owner-dropdown"><button class="drop-opt" data-owner-val="belen">🧞‍♀️</button><button class="drop-opt" data-owner-val="filippo">🧞</button><button class="drop-opt" data-owner-val="together">💕</button><button class="drop-opt" data-owner-val="unassigned">✪</button></div></div>
         </div>
@@ -734,7 +792,7 @@
         <div class="task-item" data-owner="unassigned">
           <label class="task-label">
             <input type="checkbox" class="task-check" data-section="muebles" />
-            <span class="task-text" data-i18n="t_oficina_layout">Ubicar escritorio sit-stand de Filippo. Alfombra Anders en oficina. Definir storage cerrado e iluminación de trabajo.</span>
+            <span class="task-text" data-i18n="t_oficina_layout">Ubicar escritorio <span class="tip" data-tip="sit_stand">sit-stand</span> de Filippo. Alfombra Anders en oficina. Definir storage cerrado e iluminación de trabajo.</span>
           </label>
           <div class="owner-wrap"><button class="owner-badge" title="Sin asignar">✪</button><div class="owner-dropdown"><button class="drop-opt" data-owner-val="belen">🧞‍♀️</button><button class="drop-opt" data-owner-val="filippo">🧞</button><button class="drop-opt" data-owner-val="together">💕</button><button class="drop-opt" data-owner-val="unassigned">✪</button></div></div>
         </div>

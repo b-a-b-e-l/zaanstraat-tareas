@@ -69,7 +69,20 @@ const TOOLTIPS = {
     landskrona: "Sofá de IKEA con tapicería de tela, estilo clásico actualizado.",
     gemeente: "Ayuntamiento / municipio — donde hay que registrarse al cambiar de domicilio en los Países Bajos.",
     digid: "Identidad digital holandesa — login único para todos los servicios del gobierno online.",
+    samenlevingscontract: "Contrato de convivencia ante notario para parejas no casadas. Regula aportes a la vivienda, cuenta conjunta, bienes, y protección ante desempleo, enfermedad o fallecimiento. No sustituye al testamento para bienes privados.",
     bsn: "Número de identificación fiscal holandés (Burgerservicenummer) — equivalente al NIE/TIN.",
+    tipo_interes: "Porcentaje anual que cobra el banco por prestarte dinero. En Holanda las hipotecas suelen ser a tipo fijo por un período determinado; cuanto más largo el período, más alto suele ser el tipo.",
+    cuota_mensual: "Lo que pagás al banco cada mes: incluye devolución del capital prestado (amortización) más los intereses. En Holanda se llama 'maandlast'.",
+    periodo_fijo: "Años durante los cuales el tipo de interés no cambia. Al terminar ese período, el banco puede subir o bajar el tipo según el mercado. Opciones típicas: 10, 20 o 30 años.",
+    taf: "TAF Verzekeringen — aseguradora holandesa especializada en seguros de vida vinculados a hipotecas (overlijdensrisicoverzekering). Ofrecen cobertura decreciente (baja junto a la deuda) o nivel fijo.",
+    cuestionario_medico: "Formulario médico que pide la aseguradora para evaluar el riesgo antes de emitir el seguro de vida. Según las respuestas, pueden aceptar, cobrar más o excluir ciertas enfermedades.",
+    overdrachtsbelasting: "Impuesto de transferencia holandés que se paga al comprar una propiedad. Para primeros compradores menores de 35 años que van a vivir en la casa: 0%. Para el resto: 2% del precio de compra. Se paga en la notaría el día de la firma.",
+    hypotheekadviseur: "Asesor hipotecario independiente (como Edwin) que compara ofertas de distintos bancos y guía todo el proceso. En Holanda es habitual contratarlos; cobran honorarios fijos, no comisión del banco.",
+    bouwkundige_keuring: "Inspección técnica del inmueble realizada por un perito (bouwkundige) antes de la compra. Evalúa el estado de la estructura, instalaciones, humedades y posibles defectos. El informe clasifica los problemas y estima el coste de las reparaciones.",
+    mineral_wool: "Lana mineral (lana de roca o lana de vidrio) — material aislante que se coloca entre los perfiles metálicos de una pared de pladur. Reduce el paso del sonido entre habitaciones.",
+    sit_stand: "Escritorio regulable en altura — permite trabajar de pie o sentado con el mismo mueble. Muy común en Países Bajos para el trabajo desde casa.",
+    electricista: "Técnico certificado para instalaciones eléctricas. En Holanda, ciertos trabajos eléctricos deben hacerse por profesionales certificados (erkend installateur) por seguridad y para el seguro del hogar.",
+    fontanero: "Técnico de fontanería (loodgieter en holandés). Necesario para mover o instalar tomas de agua, desagües, conexiones de lavaplatos o lavadora.",
   },
   it: {
     koopovereenkomst: "Contratto di compravendita — il documento legale che formalizza l'acquisto tra venditore e acquirente.",
@@ -130,7 +143,20 @@ const TOOLTIPS = {
     landskrona: "Divano IKEA con rivestimento in tessuto.",
     gemeente: "Comune — dove bisogna registrarsi quando si cambia indirizzo in Olanda.",
     digid: "Identità digitale olandese — accesso unico per tutti i servizi governativi online.",
+    samenlevingscontract: "Contratto di convivenza dal notaio per coppie non sposate. Regola i contributi per la casa, il conto cointestato, i beni e la protezione in caso di disoccupazione, malattia o decesso. Non sostituisce il testamento per i beni privati.",
     bsn: "Numero di identificazione fiscale olandese (Burgerservicenummer).",
+    tipo_interes: "Tasso d'interesse annuale che la banca addebita per il prestito. In Olanda i mutui sono generalmente a tasso fisso per un periodo determinato.",
+    cuota_mensual: "Rata mensile del mutuo: include restituzione del capitale (ammortamento) più gli interessi. In olandese si chiama 'maandlast'.",
+    periodo_fijo: "Anni in cui il tasso d'interesse non cambia. Al termine, la banca può modificarlo. Opzioni tipiche: 10, 20 o 30 anni.",
+    taf: "TAF Verzekeringen — assicuratore olandese specializzato in assicurazioni vita collegate ai mutui. Offrono copertura decrescente (scende con il debito) o a importo fisso.",
+    cuestionario_medico: "Questionario medico richiesto dall'assicuratore per valutare il rischio prima di emettere la polizza vita. Le risposte possono influire sul premio o sull'accettazione.",
+    overdrachtsbelasting: "Imposta di trasferimento olandese pagata all'acquisto di un immobile. Per primi acquirenti under 35 che ci abiteranno: 0%. Per gli altri: 2% del prezzo. Si paga dal notaio il giorno della firma.",
+    hypotheekadviseur: "Consulente ipotecario indipendente (come Edwin) che confronta le offerte delle banche e guida l'intero processo. In Olanda è comune assumerli; percepiscono onorari fissi, non commissioni dalla banca.",
+    bouwkundige_keuring: "Ispezione tecnica dell'immobile effettuata da un perito prima dell'acquisto. Valuta la struttura, gli impianti, l'umidità e i difetti. Il rapporto classifica i problemi e stima i costi di riparazione.",
+    mineral_wool: "Lana minerale (lana di roccia o lana di vetro) — materiale isolante posizionato tra i profili metallici di una parete in cartongesso. Riduce il passaggio del suono tra le stanze.",
+    sit_stand: "Scrivania regolabile in altezza — permette di lavorare in piedi o seduti con lo stesso mobile. Molto comune nei Paesi Bassi per il lavoro da casa.",
+    electricista: "Tecnico certificato per impianti elettrici. In Olanda certi lavori devono essere eseguiti da installatori certificati (erkend installateur).",
+    fontanero: "Idraulico (loodgieter in olandese). Necessario per spostare o installare prese d'acqua, scarichi, connessioni di lavastoviglie o lavatrice.",
   },
   en: {
     koopovereenkomst: "Purchase agreement — the legal document that formalises the sale between seller and buyer.",
@@ -191,7 +217,20 @@ const TOOLTIPS = {
     landskrona: "IKEA sofa with fabric upholstery.",
     gemeente: "Municipality — where you register when changing address in the Netherlands.",
     digid: "Dutch digital identity — single login for all government online services.",
+    samenlevingscontract: "Cohabitation agreement made before a notary for unmarried couples. Regulates contributions to the home, joint account, assets, and protection in case of unemployment, illness or death. Doesn't replace a will for private assets.",
     bsn: "Dutch tax/citizen identification number (Burgerservicenummer).",
+    tipo_interes: "Annual interest rate the bank charges on your mortgage. In the Netherlands mortgages are usually at a fixed rate for a set period; the longer the period, the higher the rate tends to be.",
+    cuota_mensual: "Monthly mortgage payment: includes repayment of the borrowed capital (amortisation) plus interest. In Dutch called 'maandlast'.",
+    periodo_fijo: "Years during which the interest rate stays fixed. When it ends, the bank can adjust it to market rates. Typical options: 10, 20 or 30 years.",
+    taf: "TAF Verzekeringen — Dutch insurer specialising in life insurance linked to mortgages (overlijdensrisicoverzekering). They offer decreasing cover (decreases with the debt) or fixed-amount cover.",
+    cuestionario_medico: "Medical questionnaire the insurer requests to assess risk before issuing a life policy. Answers may affect the premium, lead to exclusions, or result in rejection.",
+    overdrachtsbelasting: "Dutch property transfer tax paid when buying a home. For first-time buyers under 35 who will live there: 0%. For everyone else: 2% of the purchase price. Paid at the notary on signing day.",
+    hypotheekadviseur: "Independent mortgage adviser (like Edwin) who compares offers from different banks and guides the whole process. In the Netherlands it's standard to hire one; they charge fixed fees, not bank commissions.",
+    bouwkundige_keuring: "Technical building inspection carried out by a surveyor before purchase. Evaluates structure, installations, damp and defects. The report classifies problems and estimates repair costs.",
+    mineral_wool: "Mineral wool (rock wool or glass wool) — insulating material placed between the metal studs of a drywall partition. Reduces sound transmission between rooms.",
+    sit_stand: "Height-adjustable desk — lets you work standing or seated with the same piece of furniture. Very common in the Netherlands for home working.",
+    electricista: "Certified electrician. In the Netherlands certain electrical works must be done by certified installers (erkend installateur) for safety and home insurance purposes.",
+    fontanero: "Plumber (loodgieter in Dutch). Needed to move or install water points, drains, dishwasher or washing machine connections.",
   }
 };
 
@@ -207,6 +246,9 @@ const TRANSLATIONS = {
     s1sub1: "Contrato de compra",
     s1sub2: "Notario",
     s1sub3: "VvE y documentos legales",
+    s1sub4: "Samenlevingscontract y testamento",
+    t_samenleving: "Leer y conversar la guía del samenlevingscontract antes de la cita con el notario: aportes a la entrada, cuenta conjunta, bienes, protección por desempleo/enfermedad/fallecimiento, y si conviene sumar testamento (testamenten) al mismo paquete.",
+    guide_btn: "📖 Ver guía completa",
     s2title: "Financiero, hipoteca y seguros",
     s2desc: "Hipoteca, taxatie, bank guarantee, seguro de vida y presupuesto total.",
     s2sub1: "Hipoteca",
@@ -313,6 +355,9 @@ const TRANSLATIONS = {
     s1sub1: "Contratto di acquisto",
     s1sub2: "Notaio",
     s1sub3: "VvE e documenti legali",
+    s1sub4: "Samenlevingscontract e testamento",
+    t_samenleving: "Leggere e discutere la guida del samenlevingscontract prima dell'appuntamento dal notaio: contributi per l'acconto, conto cointestato, beni, protezione per disoccupazione/malattia/decesso, e se conviene aggiungere i testamenti allo stesso pacchetto.",
+    guide_btn: "📖 Vedi la guida completa",
     s2title: "Finanze, mutuo e assicurazioni",
     s2desc: "Mutuo, taxatie, bank guarantee, assicurazione vita e budget totale.",
     s2sub1: "Mutuo",
@@ -419,6 +464,9 @@ const TRANSLATIONS = {
     s1sub1: "Purchase agreement",
     s1sub2: "Notary",
     s1sub3: "VvE and legal documents",
+    s1sub4: "Samenlevingscontract & will",
+    t_samenleving: "Read and discuss the samenlevingscontract guide before the notary appointment: down payment contributions, joint account, assets, protection for unemployment/illness/death, and whether to add wills (testamenten) to the same package.",
+    guide_btn: "📖 View full guide",
     s2title: "Finances, mortgage & insurance",
     s2desc: "Mortgage, taxatie, bank guarantee, life insurance and full budget.",
     s2sub1: "Mortgage",
@@ -835,3 +883,27 @@ function updateAllProgress() {
   if (globalBar) globalBar.style.width = globalPct + '%';
   if (globalLabel) globalLabel.textContent = globalPct + '%';
 }
+
+// ---- SAMENLEVINGSCONTRACT GUIDE MODAL ----
+function openGuide(e) {
+  if (e) e.stopPropagation();
+  const overlay = document.getElementById('guideOverlay');
+  if (overlay) overlay.classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeGuide() {
+  const overlay = document.getElementById('guideOverlay');
+  if (overlay) overlay.classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+function closeGuideOnOverlay(e) {
+  if (e.target.id === 'guideOverlay') {
+    closeGuide();
+  }
+}
+
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') closeGuide();
+});
